@@ -152,7 +152,7 @@ body.wrong {
 
     content: '';
     position: absolute;
-    top: 20%;
+    bottom: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 20px;
