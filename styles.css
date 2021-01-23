@@ -1,0 +1,136 @@
+*,*::before,*::after {
+
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+
+}
+
+:root {
+
+    --hue-neutral: 350;
+    --hue-wrong:0;
+    --hue-correct:145;
+
+}
+
+h1 {
+
+    position: relative;
+    font-size: 50px;
+    width: 235px;
+    background-color:slateblue;
+    border:5px solid black;
+    border-radius: 10px;
+    animation-name: mymove;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+
+}
+
+@keyframes mymove {
+
+    0%{background-color: slateblue;left:0;top: 0;}
+    25%{background-color: springgreen;left: 10px;top: 0;}
+    50%{background-color: tomato;bottom: 10px;left: 0;}
+    75%{background-color: turquoise;right: 10px;top: 0;}
+    100%{background-color: yellow;top: 10px;right: 0;}
+
+}
+
+body {
+    
+    --hue: var(--hue-neutral);
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(var(--hue),100%, 20%);
+    border: 10px solid black;
+
+}
+
+body.correct {
+
+    --hue: var(--hue-correct);
+}
+
+body.wrong {
+
+    --hue:var(--hue-wrong);
+}
+
+.container {
+
+    width: 800px;
+    max-width: 80%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px;
+
+}
+
+.btn-grid {
+
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+    gap: 10px;
+    margin: 20px 0;
+
+}
+
+.btn {
+
+    --hue: var(--hue-neutral);
+    border: 2px solid hsl(var(--hue),100%, 30%);
+    background-color: hsl(var(--hue),100%, 50%);
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: white;
+    outline: none;
+    
+}
+.btn:hover {
+
+    background-color: black;
+
+}
+
+.btn.correct {
+
+    --hue: var(--hue-correct);
+    color: black;
+
+}
+
+.btn.wrong {
+
+    --hue: var(--hue-wrong);
+
+}
+
+.start-btn, .next-btn {
+
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
+
+}
+
+.controls {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.hide {
+
+    display: none;
+
+}
